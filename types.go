@@ -6,8 +6,8 @@ type Matrix struct {
 	Data []float64
 }
 
-func NewMatrix(rows int, cols int) Matrix {
-	return Matrix{
+func NewMatrix(rows int, cols int) *Matrix {
+	return &Matrix{
 		Rows: rows,
 		Cols: cols,
 		Data: make([]float64, rows*cols),
