@@ -34,3 +34,13 @@ func softmax(v []float64) []float64 {
 
 	return res
 }
+
+func SCCEL(ŷ Matrix, y []int) float64 { // Sparse Categorical Cross-Entropy Loss
+	epsilon := 1e-15
+	var res float64
+	for i := range y {
+		res += math.Log(math.Max(epsilon, math.Min(ŷ.At(i, y[i]), 1.0)))
+
+	}
+	return -res / float64(len(y))
+}
