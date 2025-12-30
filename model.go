@@ -48,7 +48,7 @@ func (l *Logistic) fit(X *Matrix, Y []int, lr float64, batchSize int, epochs int
 		var numBatches int
 
 		for start := 0; start < dataSize; start += batchSize {
-			end := min(start+batchSize, dataSize)
+			end := min(start+batchSize, dataSize) - 1
 			batchX := X.GetRows(start, end) // [bs, m]
 			batchY := Y[start:end]          // [bs]
 			currentBatchSize := end - start
