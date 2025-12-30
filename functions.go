@@ -4,12 +4,8 @@ import (
 	"math"
 )
 
-func sigmoid(v []float64) []float64 {
-	res := make([]float64, len(v))
-	for i, x := range v {
-		res[i] = 1 / (1 + math.Exp(-x))
-	}
-
+func sigmoid(v float64) float64 {
+	res := 1 / (1 + math.Exp(-v))
 	return res
 }
 
@@ -35,7 +31,7 @@ func softmax(v []float64) []float64 {
 	return res
 }
 
-func SCCEL(ŷ Matrix, y []int) float64 { // Sparse Categorical Cross-Entropy Loss
+func SCCEL(ŷ *Matrix, y []int) float64 { // Sparse Categorical Cross-Entropy Loss
 	epsilon := 1e-15
 	var res float64
 	for i := range y {
