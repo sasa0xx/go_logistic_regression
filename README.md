@@ -1,34 +1,44 @@
 # go_logistic_regression
 
-## A fully functioning EXAMPLE project written in Go from scratch that implements a logistic regressor
+## A fully functioning example project written in Go that implements logistic regression from scratch
 
-This project project is am example that shows the math behind logistic regressors using Go. Every part of this project is simple code which shows you how to do the following:
+This project is an example that shows the math behind logistic regression using Go.
+Every part of the code is written manually to keep things simple and readable, and
+to make it clear how logistic regression actually works under the hood.
 
-* Create custom math functions like Sigmoid and Softmax from scratch.
-* Create a loss/cost function like S-CCEL (Sparse Categorical Sparse-Entropy Loss).
-* Create custom datatypes for matrices.
-* Create a learning machine learning model like logistic regressor from scratch.
+The project demonstrates how to:
+
+- Implement activation functions such as **Sigmoid** (binary) and **Softmax** (multiclass) from scratch
+- Implement a loss function such as **Sparse Categorical Cross-Entropy**
+- Create custom matrix data types and basic matrix operations
+- Build and train a logistic regression model using batch gradient descent
 
 ---
 
 ## Features
 
-- Simple, easy-to-understand implementation of logistic regression (categorical)
-- Batch gradient descent (configurable learning rate and iterations)
-- Predic probabilites and class labels.
-- Tests and examples to help you get started
+- Simple and easy-to-understand implementation of logistic regression (categorical / multiclass)
+- Batch gradient descent with configurable learning rate and number of iterations
+- Predict class probabilities and class labels
+- Tests and examples included
 
 ---
 
 ## Installation
 
 To install the package for use in your project:
+
 ```bash
 go get github.com/sasa0xx/go_logistic_regression
 ```
 
-Or add it to your module with:
+Or add it to your module manually:
 
 ```bash
 go mod edit -require=github.com/sasa0xx/go_logistic_regression@latest
 ```
+
+## Notes
+This project is intended for learning and experimentation.
+It avoids external machine learning libraries and focuses on clarity and correctness
+rather than performance or optimization.
